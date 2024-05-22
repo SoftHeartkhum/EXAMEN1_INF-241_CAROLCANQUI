@@ -1,0 +1,9 @@
+Según la taxonomía de Flynn, OPENMP es una implementación de un modelo de programación paralela conocido como 
+"Single Instruction, Multiple Data" (SIMD), lo que significa que ejecuta múltiples hilos de forma simultánea 
+utilizando una única secuencia de instrucciones.
+Por otro lado, MPI (Message Passing Interface) y Multiprocessing son más flexibles en términos de modelo de 
+programación, ya que permiten la ejecución de múltiples procesos de forma independiente, lo que se ajusta a la 
+clasificación de "Multiple Instruction, Multiple Data" (MIMD) de la taxonomía de Flynn.
+En conclusion se determina:
+OPENMP: SIMD
+MPI y Multiprocessing: MIMD

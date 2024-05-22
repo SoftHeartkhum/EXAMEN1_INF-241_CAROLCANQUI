@@ -1,4 +1,4 @@
-#hola mundo biblioteca stdio.h
+//hola mundo biblioteca stdio.h
 #include <stdio.h>
 
 int main() {

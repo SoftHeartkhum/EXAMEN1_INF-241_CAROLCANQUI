@@ -1,0 +1,10 @@
+C:\Users\HUASCAR\source\repos\CalculadoraConsola\CalculadoraConsola\bin\Debug\CalculadoraConsola.exe.config
+C:\Users\HUASCAR\source\repos\CalculadoraConsola\CalculadoraConsola\bin\Debug\CalculadoraConsola.exe
+C:\Users\HUASCAR\source\repos\CalculadoraConsola\CalculadoraConsola\bin\Debug\CalculadoraConsola.pdb
+C:\Users\HUASCAR\source\repos\CalculadoraConsola\CalculadoraConsola\bin\Debug\Logica.dll
+C:\Users\HUASCAR\source\repos\CalculadoraConsola\CalculadoraConsola\bin\Debug\Logica.pdb
+C:\Users\HUASCAR\source\repos\CalculadoraConsola\CalculadoraConsola\obj\Debug\CalculadoraConsola.csproj.AssemblyReference.cache
+C:\Users\HUASCAR\source\repos\CalculadoraConsola\CalculadoraConsola\obj\Debug\CalculadoraConsola.csproj.CoreCompileInputs.cache
+C:\Users\HUASCAR\source\repos\CalculadoraConsola\CalculadoraConsola\obj\Debug\Calculad.CB05B30C.Up2Date
+C:\Users\HUASCAR\source\repos\CalculadoraConsola\CalculadoraConsola\obj\Debug\CalculadoraConsola.exe
+C:\Users\HUASCAR\source\repos\CalculadoraConsola\CalculadoraConsola\obj\Debug\CalculadoraConsola.pdb

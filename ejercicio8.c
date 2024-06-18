@@ -1,39 +1,35 @@
 #include <stdio.h>
 #include <omp.h>
 
-void generar_secuencia(int ini, int fin, int *secuencia) {
-    for (int i = ini; i <= fin; i++) {
-        secuencia[i - ini] = i * 2;
+void generar_serie(int inicial, int final, int *serie) {
+    for (int i = inicial; i <= final; i++) {
+        serie[i - inicial] = i * 2;
     }
 }
-
 int main() {
-    int terminos = 100;  // Número de términos en la secuencia
-    int num_hilos = omp_get_max_threads();  // Número de hilos (procesadores)
-    
-    // Distribuir el trabajo entre los hilos
-    #pragma omp parallel num_threads(num_hilos)
+    int limite = 100;  // Número de términos en la serie
+    int num_proc = omp_get_max_threads();  // Número de procesadores(vectores)
+    // Distribuir el trabajo entre los procesadores
+    #pragma omp parallel num_threads(num_proc)
     {
-        int id = omp_get_thread_num();  // Identificador del hilo actual
-        int inicio = id * (terminos / num_hilos) + 1;  // Calcular el inicio del rango para el hilo actual
-        int fin = (id + 1) * (terminos / num_hilos);  // Calcular el final del rango para el hilo actual
-        
-        // Ajustar el final del rango para el último hilo si el número de términos no es divisible entre el número de hilos
-        if (id == num_hilos - 1) {
-            fin += terminos % num_hilos;
+        int id = omp_get_thread_num();  // Identificador del procesador actual
+        int inicio = id * (limite / num_proc) + 1;  // Calcular el inicio del rango para el procesador actual
+        int fin = (id + 1) * (limite / num_proc);  // Calcular el final del rango para el procesador actual        
+// El último procesador maneje los términos restantes si el límite no es divisible entre el número de procesadores
+        if (id == num_proc - 1) {
+            fin += limite % num_proc;
         }
-        
-        // Arreglo para almacenar la secuencia generada por el hilo actual
-        int secuencia[terminos / num_hilos + 1];
-        generar_secuencia(inicio, fin, secuencia);
-        
-        // Imprimir la secuencia generada por el hilo actual
-        printf("Hilo %d: ", id);
+        // Arreglo para almacenar la serie generada por el procesador actual
+        int serie[limite / num_proc + 1];
+        generar_serie(inicio, fin, serie);
+        // Imprimir la serie generada por el procesador actual
+        printf("Procesador %d: ", id);
         for (int i = 0; i < fin - inicio + 1; i++) {
-            printf("%d ", secuencia[i]);
+            printf("%d ", serie[i]);
         }
         printf("\n");
     }
 
     return 0;
 }
+
